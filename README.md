@@ -30,5 +30,5 @@
 - 使用しない場合は、使用素材の項目をREADMEから削除してください。
 折りたたむ
 
-##実装機能リスト
+## 実装機能リスト
 [実装機能リスト](https://docs.google.com/spreadsheets/d/1ixbunnamu9RIP0kuwsbsDyIti1Ks4xZuxoGyMQ-0HhI/edit?usp=sharing)
