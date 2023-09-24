@@ -4,12 +4,6 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
   def change
     create_table :customers do |t|
       ## Database authenticatable
-      t.string :last_name, null :false
-      t.string :first_name, null :false
-      t.string :telephone_number, null :false
-      t.string :postal_code, null :false
-      t.string :address, null :false
-      t.boolean :is_deleted ,null :false
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
@@ -39,6 +33,12 @@ class DeviseCreateCustomers < ActiveRecord::Migration[6.1]
       # t.datetime :locked_at
 
 
+      t.string :last_name, null: false
+      t.string :first_name, null: false
+      t.string :telephone_number, null: false
+      t.string :postal_code, null: false
+      t.string :address, null: false
+      t.boolean :is_deleted, null: false
       t.timestamps null: false
 
     end
