@@ -1,44 +1,37 @@
 <h2>Sign up</h2>
 
-<%= form_with model: @customer, url: customer_registration_path do |f| %>
+<%= form_with model: @customer, url: customer_registration_path, method: :post do |f| %>
   <%= render "public/shared/error_messages", resource: resource %>
 
   <div class="field">
-            <%= f.label :Name %>(姓)
+            Name(姓)
             <%= f.text_field :last_name %>
             (名)
             <%= f.text_field :first_name %>
           </div>
 
           <div class="field">
-            <%= f.label :kana %>(セイ)
-            <%= f.text_field :last_name_kana %>
-            (メイ)
-            <%= f.text_field :first_name_kana %>
-          </div>
-
-          <div class="field">
-            <%= f.label :mail %>
+            Mail
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
           </div>
 
           <div class="field">
-            <%= f.label :postalcode %>(ハイフンなし)
+            Postal_code(ハイフンなし)
             <%= f.number_field :postal_code %>
           </div>
 
           <div class="field">
-            <%= f.label :address %>
+            Address
             <%= f.text_field :address %>
           </div>
 
           <div class="field">
-            <%= f.label :telephonenumber %>
+            Telephone_number
             <%= f.number_field :telephone_number %>
           </div>
 
           <div class="field">
-            <%= f.label :password %>(6文字以上)
+            Password(6文字以上)
             <% if @minimum_password_length %>
 
             <% end %>
@@ -46,7 +39,7 @@
           </div>
 
           <div class="field">
-            <%= f.label :password %>(確認用)
+            Password(確認用)
             <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
           </div>
 
