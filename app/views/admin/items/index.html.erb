@@ -1,0 +1,50 @@
+</br>
+<div class="container">
+  <div class="row">
+    <span class="p-2 mb-2 bg-secondary text-center col-md-2">商品一覧</span>
+    <%= link_to new_admin_item_path, class: "col-md-6 ml-auto" do %>
+      <i class="fas fa-plus-circle fa-3x" style= "color:white,black;"></i>
+    <% end %>
+  </div>
+</div></br>
+
+<div class="container">
+  <div class="row">
+
+    <table class="table col-md-7">
+      <thead>
+        <tr class="table-active">
+          <th>
+            商品ID
+          </th>
+          <th>
+            商品名
+          </th>
+          <th>
+            税抜価格
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @items.each do |item| %>
+        <tr>
+          <td>
+            <%= item.id %>
+          </td>
+          <td>
+            <%= link_to item.name, admin_item_path(item.id) %>
+          </td>
+          <td>
+            <%= item.price %>
+          </td>
+        </tr>
+        <% end %>
+        <tr>
+          <td></td><td></td>
+          <td><%= paginate @items %></td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
