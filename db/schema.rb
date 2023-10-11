@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 2023_09_24_132957) do
     t.string "name", null: false
     t.string "address", null: false
     t.string "postal_code", null: false
-    t.integer "payment", null: false
+    t.integer "payment_method", null: false
     t.integer "postage", null: false
     t.integer "price", null: false
     t.datetime "created_at", precision: 6, null: false

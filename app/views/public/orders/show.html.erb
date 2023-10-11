@@ -22,7 +22,7 @@
                             <td>
                                 <%= @order.postal_code %></br>
                                 <%= @order.address %>
-                                <%= @order.address_name %>
+                                <%= @order.name %>
                             </td>
                         </tr>
                         <tr>
@@ -43,15 +43,15 @@
                 <tbody>
                     <tr>
                         <th class="table-active">商品合計</th>
-                        <td><%= @order.total_price - 800 %></td>
+                        <td><%= @order.price - 100 %></td>
                     </tr>
                     <tr>
                         <th class="table-active">配送料</th>
-                        <td>800</td>
+                        <td>100</td>
                     </tr>
                     <tr>
                         <th class="table-active font-weight-bold">ご請求額</th>
-                        <td><%= @order.total_price  %></td>
+                        <td><%= @order.price  %></td>
                     </tr>
                 </tbody>
             </table>
@@ -78,8 +78,8 @@
                     <% @order.order_details.each do |order_detail| %>
                     <tr>
                         <td><%= order_detail.item.name %></td>
-                        <td><%= order_detail.add_tax_price %></td>
-                        <td><%= order_detail.item_amount %></td>
+                        <td><%= order_detail.price %></td>
+                        <td><%= order_detail.amount %></td>
                         <td><%= order_detail.subtotal %></td>
                     </tr>
                     <% end %>

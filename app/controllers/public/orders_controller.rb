@@ -21,8 +21,8 @@ class Public::OrdersController < ApplicationController
         order_detail = OrderDetail.new()
         order_detail.order_id = @orders.id
         order_detail.item_id = cart_item.item_id
-        order_detail.item_amount = cart_item.amount
-        order_detail.add_tax_price = cart_item.item.with_tax_price
+        order_detail.amount = cart_item.amount
+        order_detail.price = cart_item.item.with_tax_price
         order_detail.save
         cart_item.delete
     end
