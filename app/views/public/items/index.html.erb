@@ -1,0 +1,48 @@
+</br>
+  </br>
+  <div class="container">
+    <div class="row">
+      <table class="table table-borderless col-md-3">
+        <thead>
+          <tr>
+            <th><h2>商品一覧(全<%= @item.count %>件)</h2></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @item.each do |item| %>
+          <tr class="w-25 p-3">
+            <td></br>
+            <% if item.image.attached? %>
+              <%= link_to public_item_path(item.id) do %>
+              <%= image_tag item.image, size: "100×100" %>
+              <% end %>
+            <% else %>
+              <%= link_to public_item_path(item.id) do %>
+              <%= image_tag 'no_image', size: "100×100" %>
+              <% end %>
+            <% end %>
+            </td>
+          </tr>
+          <tr class="w-25 p-3">
+            <th>
+              <%= item.name %>
+            </th>
+          </tr>
+          <tr class="w-25 p-3">
+            <th>
+              ￥<%= item.price %>
+            </th>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="text-center">
+        <%= paginate @item %>
+      </div>
+    </div>
+  </div>

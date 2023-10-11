@@ -43,7 +43,7 @@
                 <%= link_to "注文履歴一覧", admin_root_path, class: "btn btn-outline-secondary nav-link text-dark" %>
               </li>
               <li class="nav-item p-3">
-                <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "btn btn-outline-secondary nav-link text-dark" %>
+                <%= button_to "ログアウト", destroy_admin_session_path, method: :delete %>
               </li>
               <% else %>
               <li class="nav-item p-3">

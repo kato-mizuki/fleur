@@ -1,0 +1,54 @@
+</br>
+<div class="container">
+  <div class="row">
+    <h3 class="bg-secondary p-1 mb-2">注文情報入力</h3>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <%= form_with model: @order, url: public_orders_confirm_path do |f| %>
+     <table>
+      <thead>
+        <tr>
+          <th>支払方法</th>
+        </tr>
+
+
+        <tr>
+          <td>
+            <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
+            <%= f.label :payment_method_credit_card, Order.payment_methods_i18n[:credit_card] %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
+            <%= f.label :payment_method_transfer, Order.payment_methods_i18n[:transfer]%>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>お届け先</th>
+        </tr>
+        <tr>
+          <td>
+            <%= current_customer.postal_code %>
+            <%= current_customer.address %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= current_customer.last_name %>
+            <%= current_customer.first_name %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <%= f.hidden_field :address, :value => current_customer.address %>
+    <%= f.hidden_field :address_name, :value => current_customer.last_name + current_customer.first_name %>
+    <%= f.hidden_field :postal_code, :value => current_customer.postal_code %>
+    <%= f.submit "確認画面へ進む", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
