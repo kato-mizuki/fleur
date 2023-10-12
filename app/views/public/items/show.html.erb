@@ -14,6 +14,21 @@
           <th><%= @items.name %></th>
         </tr>
         <tr>
+           <% if @items.favorited_by?(current_customer) %>
+            <p>
+              <%= link_to public_item_favorites_path(@items), method: :delete do %>
+                ♥
+              <% end %>
+            </p>
+            <% else %>
+            <p>
+              <%= link_to public_item_favorites_path(@items), method: :post do %>
+                ♡
+              <% end %>
+            </p>
+          <% end %>
+        </tr>
+        <tr>
           <td><%= @items.introduction %></td>
         </tr>
         <tr>
