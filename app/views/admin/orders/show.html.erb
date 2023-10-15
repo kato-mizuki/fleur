@@ -1,0 +1,89 @@
+</br><div class="container">
+  <div class="row">
+    <span class="p-2 mb-1 bg-secondary">Order History Details</span>
+  </div>
+</div></br>
+<div class="container">
+  <div class="row">
+    <table class="table table-borderless text-light">
+      <thead>
+        <tr>
+          <th>Customer</th>
+          <td>
+            <%= link_to @orders.name, admin_customer_path(@orders.customer_id) %>
+          </td>
+        </tr>
+        <tr>
+          <th>Day</th>
+          <td><%= @orders.created_at.strftime('%Y/%m/%d') %></td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td>
+            <%= @orders.postal_code %>
+            <%= @orders.address %></br>
+            <%= @orders.name %>
+          </td>
+        </tr>
+        <tr>
+          <th>Payment Method</th>
+          <td><%= @orders.payment_method_i18n %></td>
+        </tr>
+        <tbody></tbody>
+      </thead>
+    </table>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <table class="table table-borderless col-md-8 text-light">
+      <thead>
+        <tr class="table-active">
+          <th>Item Name</th>
+          <th>Price(tax)</th>
+          <th>Amount</th>
+          <th>Subtotal</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.order_details.each do |order_detail| %>
+        <tr>
+          <td>
+            <%= order_detail.item.name %></br>
+          </td>
+          <td>
+            <%= order_detail.item.with_tax_price %>
+          </td>
+          <td>
+            <%= order_detail.amount %>
+
+          </td>
+          <td><%= order_detail.subtotal %></td>
+          <td></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <table class="table table-borderless col-md-4 text-light">
+      <thead></thead>
+      <tbody>
+        <tr>
+          <th>Item Price</th>
+          <td>￥<%= @orders.price - 100 %></td>
+        </tr>
+        <tr>
+          <th>Postage</th>
+          <td>￥100</td>
+        </tr>
+        <tr>
+          <th>Total Price</th>
+          <td>￥<%= @orders.price %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

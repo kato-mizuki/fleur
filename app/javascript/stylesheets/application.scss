@@ -1,9 +1,17 @@
 @use '~bootstrap/scss/bootstrap';
 
+.main-container{
+  position: relative;
+}
 .main-container img{
   width: 1350px;
   height: 1200px;
   background-size: auto;
   padding: 10px;
+}
+.text{
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 

@@ -1,33 +1,33 @@
 <div class="container">
   <div class="row">
-    <span class="p-2 mb-1 bg-secondary">商品新規登録</span>
+    <span class="p-2 mb-1 bg-secondary">Item New</span>
   </div>
 </div>
 <div class="container">
   <div class="row">
     <%= form_with model: @item, url: admin_items_path do |f| %>
-    <table class="table table-borderless">
+    <table class="table table-borderless text-light">
       <thead></thead>
       <tbody>
         <tr>
-          <td>商品画像</td>
+          <td>Item image</td>
           <td><%= f.file_field :image, accept: "image/*" %></td>
         </tr>
         <tr>
-          <td>商品名</td>
+          <td>Name</td>
           <td><%= f.text_field :name %></td>
         </tr>
         <tr>
-          <td>商品説明</td>
+          <td>Introduction</td>
           <td><%= f.text_area :introduction %></td>
         </tr>
         <tr>
-          <td>税抜価格</td>
+          <td>Price</td>
           <td><%= f.text_field :price %></td>
         </tr>
         <tr>
           <td></td>
-          <td><%= f.submit "新規登録", class: "btn btn-success" %></td>
+          <td><%= f.submit "Registration", class: "btn btn-success" %></td>
         </tr>
       </tbody>
     </table>

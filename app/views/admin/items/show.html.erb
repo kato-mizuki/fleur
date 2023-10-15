@@ -1,7 +1,7 @@
 </br>
 <div class="container">
   <div class="row">
-    <span class="p-2 mb-2 bg-secondary">商品詳細</span>
+    <span class="p-2 mb-2 bg-secondary">Item Detail</span>
   </div>
 </div>
 </br>
@@ -11,7 +11,7 @@
       <%= @item.image %>
     </div>
 
-    <table class="table table-borderless col-8">
+    <table class="table table-borderless col-8 text-light">
       <thead>
         <tr>
           <th></th>
@@ -19,26 +19,25 @@
       </thead>
       <tbody>
         <tr>
-          <td>商品名</td>
+          <td>Name</td>
           <td><%= @item.name %></td>
         </tr>
         <tr>
-          <td>商品説明</td>
+          <td>Introduction</td>
           <td><%= @item.introduction %></td>
         </tr>
         <tr>
           <td>
-            税込価格</br>
-            (税抜価格）
+            Price</br>
           </td>
           <td>
             <%= @item.with_tax_price %>
-            (<%= @item.price %>)円
+            ￥(<%= @item.price %>)
           </td>
         </tr>
         <tr>
           <td>
-            <%= link_to "編集する", edit_admin_item_path, class: "btn btn-success" %>
+            <%= link_to "Edit", edit_admin_item_path, class: "btn btn-success" %>
           </td>
         </tr>
       </tbody>
