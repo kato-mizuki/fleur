@@ -1,24 +1,24 @@
 </br></br>
 <div class="container">
   <div class="row">
-    <span class="bg-secondary p-1 mb-2">注文履歴詳細</span>
+    <span class="bg-secondary p-1 mb-2">Order Detail</span>
   </div>
 </div></br>
 <div class="container">
   <div class="row">
       <div class="col-6">
-             <h4 class="font-weight-bold">注文情報</h4>
-             <table class="table table-bordered">
+             <h4 class="font-weight-bold">Information</h4>
+             <table class="table table-bordered text-light">
 
                  <thead>
                  </thead>
                     <tbody>
                         <tr>
-                            <th class="table-active">注文日</th>
+                            <th class="table-active">Day</th>
                             <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
                         </tr>
                         <tr>
-                            <th class="table-active">配送先</th>
+                            <th class="table-active">Address</th>
                             <td>
                                 <%= @order.postal_code %></br>
                                 <%= @order.address %>
@@ -26,7 +26,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th class="table-active">支払方法</th>
+                            <th class="table-active">Payment Method</th>
                             <td><%= @order.payment_method_i18n %></td>
                         </tr>
                     </tbody>
@@ -34,23 +34,23 @@
       </div>
 
         <div class="col-4 ml-auto">
-            <h4 class="font-weight-bold">請求情報</h4>
-            <table class="table table-bordered">
+            <h4 class="font-weight-bold">Price Information</h4>
+            <table class="table table-bordered text-light">
 
                 <thead>
 
                 </thead>
                 <tbody>
                     <tr>
-                        <th class="table-active">商品合計</th>
+                        <th class="table-active">Item Price</th>
                         <td><%= @order.price - 100 %></td>
                     </tr>
                     <tr>
-                        <th class="table-active">配送料</th>
+                        <th class="table-active">Postal Code</th>
                         <td>100</td>
                     </tr>
                     <tr>
-                        <th class="table-active font-weight-bold">ご請求額</th>
+                        <th class="table-active font-weight-bold">Total Price</th>
                         <td><%= @order.price  %></td>
                     </tr>
                 </tbody>
@@ -63,17 +63,17 @@
 <div class="container">
     <div class="row">
         <div class="col-8">
-            <h4 class="font-weight-bold">注文内容</h4>
-            <table class="table table-bordered">
+            <h4 class="font-weight-bold">Content</h4>
+            <table class="table table-bordered text-light">
 
                 <thead>
                 </thead>
                 <tbody>
                     <tr class="table-active">
-                        <th>商品</th>
-                        <th>単価(税込)</th>
-                        <th>個数</th>
-                        <th>小計</th>
+                        <th>Item</th>
+                        <th>Price(tax)</th>
+                        <th>Amount</th>
+                        <th>Subtotal</th>
                     </tr>
                     <% @order.order_details.each do |order_detail| %>
                     <tr>

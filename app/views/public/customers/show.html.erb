@@ -1,31 +1,35 @@
-<h2>My page</h2>
-<div>Information edit</div>
-<%= link_to "Edit", public_customers_information_edit_path, class: 'btn' %>
-<table>
-  <thead></thead>
-  <tbody>
-    <tr>
-      <th>Name</th>
-      <td><%= current_customer.last_name %><%= current_customer.first_name %></td>
-    </tr>
-    <tr>
-      <th>Postal_code</th>
-      <td><%= current_customer.postal_code %></td>
-    </tr>
-    <tr>
-      <th>Address</th>
-      <td><%= current_customer.address %></td>
-    </tr>
-    <tr>
-      <th>Telephone_number</th>
-      <td><%= current_customer.telephone_number %></td>
-    </tr>
-    <tr>
-      <th>Mail</th>
-      <td><%= current_customer.email %></td>
-    </tr>
-  </tbody>
-</table>
-</br>
-<h4>Order_history</h4>
-<%= link_to "List", public_orders_path, class: 'btn' %>
+<div class="container">
+  
+    <h2>My page</h2>
+    <h4>Information edit</h4>
+    <%= link_to "Edit", public_customers_information_edit_path, class: 'btn btn-success' %>
+    <table>
+      <thead></thead>
+      <tbody>
+        <tr>
+          <th>Name</th>
+          <td><%= current_customer.last_name %><%= current_customer.first_name %></td>
+        </tr>
+        <tr>
+          <th>Postal_code</th>
+          <td><%= current_customer.postal_code %></td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td><%= current_customer.address %></td>
+        </tr>
+        <tr>
+          <th>Telephone_number</th>
+          <td><%= current_customer.telephone_number %></td>
+        </tr>
+        <tr>
+          <th>Mail</th>
+          <td><%= current_customer.email %></td>
+        </tr>
+      </tbody>
+    </table>
+    </br>
+    <h4>Order_history</h4>
+    <%= link_to "List", public_orders_path, class: 'btn btn-primary' %>
+  
+</div>

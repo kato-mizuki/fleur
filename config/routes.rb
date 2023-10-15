@@ -31,13 +31,14 @@ Rails.application.routes.draw do
    resources :cart_items, only: [:index,:create,:update,:destroy]
   end
 
-  namespace :public do
-   get 'customers/information' => 'customers#show'
-   get 'customers/information/edit' => 'customers#edit'
-   patch 'customers/update' => 'customers#update'
-   get 'customers/withdraw' => 'customers#withdraw'
-   patch 'customers/withdraw' => 'customers#withdraw_update'
+   namespace :public do
+    get 'customers/information' => 'customers#show'
+    get 'customers/information/edit' => 'customers#edit'
+    patch 'customers/update' => 'customers#update'
+    get 'customers/withdraw' => 'customers#withdraw'
+    patch 'customers/withdraw' => 'customers#withdraw_update'
   end
+
 
   namespace :public do
    resources :items, only: [:index,:show] do

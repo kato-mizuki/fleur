@@ -7,6 +7,6 @@
   退会する場合は、「退会する」をクリックしてください。
 </p></br></br>
 <div class="text-center">
-  <%= link_to "退会しない", public_customers_information_path, class: "btn btn-primary" %>
-  <%= link_to "退会する", public_customers_withdraw_path, method: :patch, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
+  <%= link_to "No", public_customers_information_path, class: "btn btn-primary" %>
+  <%= link_to "Yes", public_customers_withdraw_path, method: :patch, "data-confirm" => "本当に削除しますか？", class: "btn btn-danger" %>
 </div>

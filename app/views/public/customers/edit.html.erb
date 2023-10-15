@@ -1,7 +1,7 @@
 <h2>Information edit</h2>
 <table>
   <thead></thead>
-  <%= form_with model: @customer, url: public_customers_update_path, method: :pacth do |f| %>
+  <%= form_with model: @customer, url: public_customers_update_path, method: :patch do |f| %>
   <tbody>
     <tr>
       <th>Name</th>
@@ -26,6 +26,7 @@
     </tr>
   </tbody>
 </table>
-<%= f.submit "Update", class: "btn" %>
-<%= link_to "unsubscribe", public_customers_withdraw_path %>
+
+<%= f.submit "Update", class: "btn btn-success" %>
+<%= link_to "unsubscribe", public_customers_withdraw_path, class: "btn btn-danger" %>
 <% end %>

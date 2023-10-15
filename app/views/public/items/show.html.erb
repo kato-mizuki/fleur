@@ -1,5 +1,5 @@
 </br><div class="container">
-    <table class="table table-borderless">
+    <table class="table table-borderless text-light">
       <thead class="col-6">
         <tr>
           <% if @items.image.attached? %>
@@ -17,13 +17,13 @@
            <% if @items.favorited_by?(current_customer) %>
             <p>
               <%= link_to public_item_favorites_path(@items), method: :delete do %>
-                ♥
+                <i class="fas fa-heart"></i>
               <% end %>
             </p>
             <% else %>
             <p>
               <%= link_to public_item_favorites_path(@items), method: :post do %>
-                ♡
+                <i class="far fa-heart"></i>
               <% end %>
             </p>
           <% end %>
@@ -39,8 +39,8 @@
         <%= form_with model: @cart_item,url: public_cart_items_path do |f| %>
         <tr>
           <%= f.hidden_field :item_id, :value => @items.id %>
-          <td><%= f.select :amount, *[1..10], include_blank: "個数選択" %></td>
-          <td><%= f.submit "カートに入れる", class: "btn btn-success" %></td>
+          <td><%= f.select :amount, *[1..10], include_blank: "Amount" %></td>
+          <td><%= f.submit "Cart", class: "btn btn-success" %></td>
         </tr>
         <% end %>
       </tbody>
