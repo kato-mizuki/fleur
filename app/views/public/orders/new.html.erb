@@ -1,7 +1,7 @@
-</br>
+</br></br></br>
 <div class="container">
   <div class="row">
-    <h3 class="bg-secondary p-1 mb-2">注文情報入力</h3>
+    <h3 class="bg-secondary p-1 mb-2">Order information Input</h3>
   </div>
 </div>
 <div class="container">
@@ -10,7 +10,7 @@
      <table>
       <thead>
         <tr>
-          <th>支払方法</th>
+          <th>Payment Method</th>
         </tr>
 
 
@@ -29,7 +29,7 @@
       </thead>
       <tbody>
         <tr>
-          <th>お届け先</th>
+          <th>Address</th>
         </tr>
         <tr>
           <td>
@@ -48,7 +48,7 @@
     <%= f.hidden_field :address, :value => current_customer.address %>
     <%= f.hidden_field :name, :value => current_customer.last_name + current_customer.first_name %>
     <%= f.hidden_field :postal_code, :value => current_customer.postal_code %>
-    <%= f.submit "確認画面へ進む", class: "btn btn-primary" %>
+    <%= f.submit "Next", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

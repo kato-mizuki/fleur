@@ -1,7 +1,7 @@
-</br>
+</br></br></br></br>
 <div class="container">
   <div class="row">
-    <span class="bg-secondary p-1 mb-2">注文情報確認</span>
+    <span class="bg-secondary p-1 mb-2">Order information</span>
   </div>
 </div>
 <div class="container">
@@ -9,10 +9,10 @@
     <table class="table table-bordered col-8">
       <thead>
         <tr class="table-active">
-          <th>商品名</th>
-          <th>単価(税込)</th>
-          <th>数量</th>
-          <th>小計</th>
+          <th>Name</th>
+          <th>Price(tax)</th>
+          <th>Amount</th>
+          <th>Subtotal</th>
         </tr>
       </thead>
       <tbody>
@@ -37,17 +37,17 @@
     <table class="table table-bordered col-3 ml-auto">
       <thead>
         <tr>
-          <th class="table-active">送料</th>
-          <td>800</td>
+          <th class="table-active">Postage</th>
+          <td>100</td>
         </tr>
         <tr>
-          <th class="table-active">商品合計</th>
+          <th class="table-active">Item price</th>
           <td>
             <%= @total %>
           </td>
         </tr>
         <tr>
-          <th class="table-active">請求金額</th>
+          <th class="table-active">Total price</th>
           <td><%= @total+100 %></td>
         </tr>
       </thead>
@@ -55,11 +55,11 @@
     <table class="table table-borderless table-sm">
       <thead>
         <tr>
-          <th>支払方法</th>
+          <th>Payment Method</th>
           <td><%= @order.payment_method_i18n %></td>
         </tr>
         <tr>
-          <th>お届け先</th>
+          <th>Address</th>
           <td>
             <%= @order.postal_code %>
             <%= @order.address %>
@@ -83,6 +83,6 @@
 <%= f.hidden_field :payment_method, :value => @order.payment_method %>
 <%= f.hidden_field :postage, :value => 100 %>
 <%= f.hidden_field :price, :value => @total +100 %>
-  <%= f.submit "注文を確定する", class: "btn btn-success" %>
+  <%= f.submit "Order", class: "btn btn-success" %>
 <% end %></div>
 </div>
