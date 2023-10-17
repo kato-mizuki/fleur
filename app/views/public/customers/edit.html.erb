@@ -1,32 +1,35 @@
-</br></br></br><h2>Information edit</h2>
-<table>
-  <thead></thead>
-  <%= form_with model: @customer, url: public_customers_update_path, method: :patch do |f| %>
-  <tbody>
-    <tr>
-      <th>Name</th>
-      <td><%= f.text_field :last_name %></td>
-      <td><%= f.text_field :first_name %></td>
-    </tr>
-    <tr>
-      <th>Postal_code</th>
-      <td><%= f.text_field :postal_code %></td>
-    </tr>
-    <tr>
-      <th>Address</th>
-      <td><%= f.text_area :address %></td>
-    </tr>
-    <tr>
-      <th>Tel</th>
-      <td><%= f.text_field :telephone_number %></td>
-    </tr>
-    <tr>
-      <th>Mail</th>
-      <td><%= f.text_field :email %></td>
-    </tr>
-  </tbody>
-</table>
+</br></br></br>
+<div class="container">
+      <h2>Information edit</h2>
+    <table>
+      <thead></thead>
+      <%= form_with model: @customer, url: public_customers_update_path, method: :patch do |f| %>
+      <tbody>
+        <tr>
+          <th>Name</th>
+          <td><%= f.text_field :last_name %></td>
+          <td><%= f.text_field :first_name %></td>
+        </tr>
+        <tr>
+          <th>Postal_code</th>
+          <td><%= f.text_field :postal_code %></td>
+        </tr>
+        <tr>
+          <th>Address</th>
+          <td><%= f.text_area :address %></td>
+        </tr>
+        <tr>
+          <th>Tel</th>
+          <td><%= f.text_field :telephone_number %></td>
+        </tr>
+        <tr>
+          <th>Mail</th>
+          <td><%= f.text_field :email %></td>
+        </tr>
+      </tbody>
+    </table>
 
-<%= f.submit "Update", class: "btn btn-success" %>
-<%= link_to "unsubscribe", public_customers_withdraw_path, class: "btn btn-danger" %>
-<% end %>
+    <%= f.submit "Update", class: "btn btn-success" %>
+    <%= link_to "unsubscribe", public_customers_withdraw_path, class: "btn btn-danger" %>
+    <% end %>
+</div>
