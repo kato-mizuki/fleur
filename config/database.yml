@@ -23,3 +23,14 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+production:
+  <<: *default
+  database: <%= ENV['DB_fleur'] %>
+  adapter: mysql2
+  encoding: utf8mb4
+  charset: utf8mb4
+  collation: utf8mb4_general_ci
+  host: <%= ENV['DB_rds-mysql-server.c7l0bhbzyeol.ap-northeast-1.rds.amazonaws.com'] %>
+  username: <%= ENV['DB_root'] %>
+  password: <%= ENV['DB_katomizuki'] %>
